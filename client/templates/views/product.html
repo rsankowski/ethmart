@@ -1,5 +1,21 @@
 <template name="product">
-  <p>Product View</p>
+  <div class="left btn grey back">Back</div>
+  {{#ipfsInfo config=ipfsInfoConfig}}
+    <div class="row">
+      <div class="col m5 s12 center-align">
+        <img src="{{image}}" alt="" class="circle responsive-img">
+        <!-- TODO Buy Button -->
+      </div>
+      <div class="col m7 s12">
+        {{#if icon}}
+          <i class="right large material-icons">{{icon}}</i>
+        {{/if}}
+        <h1>{{title}}</h1>
+        <h4 class='truncate'>{{address}}</h4>
+        {{#markdown}}{{description}}{{/markdown}}
+      </div>
+    </div>
+  {{/ipfsInfo}}
 </template>
 
 <template name="productInfoForm">
